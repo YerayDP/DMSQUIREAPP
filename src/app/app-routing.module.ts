@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'modal-spells',
     loadChildren: () => import('./modal-spells/modal-spells.module').then( m => m.ModalSpellsPageModule)
   },
+  {
+    path: 'modal-weapons',
+    loadChildren: () => import('./modal-weapons/modal-weapons.module').then( m => m.ModalWeaponsPageModule)
+  },
 ];
 @NgModule({
   imports: [

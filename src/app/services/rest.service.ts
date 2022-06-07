@@ -51,4 +51,21 @@ export class RestService {
       });
     });
   }
+  weapons() {// hacer opcionalmente para email: string y password: string
+    // para que nos devuelva una promesa, sintáxis para llamar a apirest
+
+    return new Promise(resolve => {
+ 
+      this.http.get('http://127.0.0.1:8000/api/weapons', {
+        
+        
+      }).subscribe(data => {
+        
+        resolve(data);
+        console.log(data);
+      }, err => {
+        console.log('Error, '+err);
+      });
+    });
+  }
 }
