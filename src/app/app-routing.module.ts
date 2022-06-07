@@ -1,11 +1,21 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { TabsPageModule } from './tabs/tabs.module';
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: '',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  }
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+
+  {
+    path: 'modal-spells',
+    loadChildren: () => import('./modal-spells/modal-spells.module').then( m => m.ModalSpellsPageModule)
+  },
 ];
 @NgModule({
   imports: [

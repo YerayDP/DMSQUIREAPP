@@ -27,10 +27,28 @@ export class RestService {
           
         }).subscribe(success => {// raul@raul.com devuelve los datos a quien llame a esta función
           this.token = success.success.token;// para guardar solamente el token
-          this.checkActived = success.actived;
+          this.checkActived = success.success.actived;
+          console.log(success)
           resolve(this.token);
           
         });
+    });
+  }
+  spells() {// hacer opcionalmente para email: string y password: string
+    // para que nos devuelva una promesa, sintáxis para llamar a apirest
+
+    return new Promise(resolve => {
+ 
+      this.http.get('http://127.0.0.1:8000/api/spells', {
+        
+        
+      }).subscribe(data => {
+        
+        resolve(data);
+        console.log(data);
+      }, err => {
+        console.log('Error, '+err);
+      });
     });
   }
 }

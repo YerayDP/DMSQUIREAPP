@@ -30,21 +30,23 @@ check(){
 
   this.RestService.login(this.mail, this.pass).then(data => {
     this.tokenLog=data;//token
-    console.log(this.tokenLog);
+    
     
       if (this.RestService.checkActived==1) {
-        this.route.navigate(['/tabs/tab1']);
-
+        this.route.navigate(['/tabs/tabs/tab1']);
+        
 
       }else{
 
         this.route.navigate(['/login']);
-
+        
       }
   
     
   });
+  
 
 }
+
 }
 
