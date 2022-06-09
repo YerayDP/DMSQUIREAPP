@@ -36,6 +36,28 @@ export class RestService {
         });
     });
   }
+  register(firstname:any,secondname:any,email: any,password: any) {// hacer opcionalmente para email: string y password: string
+    // para que nos devuelva una promesa, sintáxis para llamar a apirest
+
+    return new Promise(resolve => {
+
+        // <any>: para crearnos una interface, por ejemplo: <Usuario>
+        this.http.post<any>('http://127.0.0.1:8000/api/register',
+        {
+          firstname:firstname,
+          secondname:secondname,
+          email: email,
+          password: password,
+          
+          
+        }).subscribe(success => {// raul@raul.com devuelve los datos a quien llame a esta función
+          
+          console.log(success)
+          resolve(success);
+          
+        });
+    });
+  }
   spells() {// hacer opcionalmente para email: string y password: string
     // para que nos devuelva una promesa, sintáxis para llamar a apirest
 

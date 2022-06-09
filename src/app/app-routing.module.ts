@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'modal-rate',
     loadChildren: () => import('./modal-rate/modal-rate.module').then( m => m.ModalRatePageModule)
   },
+  {
+    path: 'modal-register',
+    loadChildren: () => import('./modal-register/modal-register.module').then( m => m.ModalRegisterPageModule)
+  },
 
 ];
 @NgModule({

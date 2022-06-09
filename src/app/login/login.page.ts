@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { RestService } from '../services/rest.service';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { ModalRegisterPage } from '../modal-register/modal-register.page';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,7 @@ export class LoginPage implements OnInit {
     pass: any;
     tokenLog: any;
     usuarios: any=[];
-  constructor(private RestService: RestService, private route: Router) {  }
+  constructor(private RestService: RestService, private route: Router, private modalCtrl: ModalController,) {  }
 
   ngOnInit() {
     
@@ -22,6 +24,22 @@ export class LoginPage implements OnInit {
  log() {
   console.log(this.mail,this.pass)
   this.RestService.login(this.mail, this.pass);
+}
+async modalRegister(){
+  const modal = await this.modalCtrl.create({
+    component: ModalRegisterPage,
+    componentProps: {
+      
+    },
+    
+  
+  });
+  await modal.present();
+  const { data } = await modal.onDidDismiss();
+ 
+}
+closeModal(){
+  this.modalCtrl.dismiss()
 }
 guardarDatos(){
   console.log(this.mail);

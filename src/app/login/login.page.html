@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Inicio de sesion</ion-title>
+    <ion-title>DM SQUIRE APP</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,11 +14,14 @@
       <ion-input type="text" [(ngModel)]="mail" [ngModelOptions]="{standalone: true}"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Contraseña:</ion-label>
+      <ion-label>Password:</ion-label>
       <ion-input type="password" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}"></ion-input>
     </ion-item>
     <p class="ion-text-center">
-      <ion-button type="submit" (click)="check()" >Guardar</ion-button>
+      <ion-button type="submit" (click)="check()" >Log in</ion-button>
+    </p>  
+    <p class="ion-text-center">
+      <ion-button type="submit" (click)="modalRegister()" >Register</ion-button>
     </p>  
   </form>
 </ion-content>

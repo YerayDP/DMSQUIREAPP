@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-icon size="large" name="close-outline"icon-only (click)="closeModal()"></ion-icon>
+      </ion-buttons>
+      <ion-title>Register Panel</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="createRegister()">
+    <ion-item>
+      <ion-label>First Name:</ion-label>
+      <ion-input type="text" [(ngModel)]="firstname" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Second Name:</ion-label>
+      <ion-input type="text" [(ngModel)]="secondname" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Password:</ion-label>
+      <ion-input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+    
+    
+    <p class="ion-text-center">
+      <ion-button type="submit" >Guardar</ion-button>
+    </p>  
+  </form>
+</ion-content>
