@@ -21,7 +21,7 @@ export class RestService {
     return new Promise(resolve => {
 
         // <any>: para crearnos una interface, por ejemplo: <Usuario>
-        this.http.post<any>('http://127.0.0.1:8000/api/login',
+        this.http.post<any>('http://powerful-ridge-02526.herokuapp.com/api/login',
         {
           email: email,
           password: password 
@@ -42,7 +42,7 @@ export class RestService {
     return new Promise(resolve => {
 
         // <any>: para crearnos una interface, por ejemplo: <Usuario>
-        this.http.post<any>('http://127.0.0.1:8000/api/register',
+        this.http.post<any>('http://powerful-ridge-02526.herokuapp.com/api/register',
         {
           firstname:firstname,
           secondname:secondname,
@@ -63,7 +63,7 @@ export class RestService {
 
     return new Promise(resolve => {
  
-      this.http.get('http://127.0.0.1:8000/api/spells', {
+      this.http.get('http://powerful-ridge-02526.herokuapp.com/api/spells', {
         
         
       }).subscribe(data => {
@@ -80,7 +80,7 @@ export class RestService {
 
     return new Promise(resolve => {
  
-      this.http.get('http://127.0.0.1:8000/api/weapons', {
+      this.http.get('http://powerful-ridge-02526.herokuapp.com/api/weapons', {
         
         
       }).subscribe(data => {
@@ -97,7 +97,7 @@ export class RestService {
   {
     return new Promise(resolve => {
       // <any>: para crearnos una interface
-      this.http.post<any>('http://127.0.0.1:8000/api/createPJ',
+      this.http.post<any>('http://powerful-ridge-02526.herokuapp.com/api/createPJ',
       {
         name: name,
         level: level,
@@ -126,7 +126,7 @@ deletePJ(id:any)
   {
     return new Promise(resolve => {
       // <any>: para crearnos una interface
-      this.http.post<any>('http://127.0.0.1:8000/api/deletePJ',
+      this.http.post<any>('http://powerful-ridge-02526.herokuapp.com/api/deletePJ',
       {
         id: id
 
@@ -144,7 +144,7 @@ backgrounds() {// hacer opcionalmente para email: string y password: string
 
   return new Promise(resolve => {
 
-    this.http.get('http://127.0.0.1:8000/api/backgrounds', {
+    this.http.get('http://powerful-ridge-02526.herokuapp.com/api/backgrounds', {
       
       
     }).subscribe(data => {
@@ -161,7 +161,7 @@ PJs() {// hacer opcionalmente para email: string y password: string
 
   return new Promise(resolve => {
 
-    this.http.get('http://127.0.0.1:8000/api/PJs', {
+    this.http.get('http://powerful-ridge-02526.herokuapp.com/api/PJs', {
       
       
     }).subscribe(data => {
@@ -178,7 +178,7 @@ races() {// hacer opcionalmente para email: string y password: string
 
   return new Promise(resolve => {
 
-    this.http.get('http://127.0.0.1:8000/api/races', {
+    this.http.get('http://powerful-ridge-02526.herokuapp.com/api/races', {
       
       
     }).subscribe(data => {
@@ -195,7 +195,7 @@ categories() {// hacer opcionalmente para email: string y password: string
 
   return new Promise(resolve => {
 
-    this.http.get('http://127.0.0.1:8000/api/categories', {
+    this.http.get('http://powerful-ridge-02526.herokuapp.com/api/categories', {
       
       
     }).subscribe(data => {
@@ -212,7 +212,7 @@ events() {// hacer opcionalmente para email: string y password: string
 
   return new Promise(resolve => {
 
-    this.http.get('http://127.0.0.1:8000/api/events', {
+    this.http.get('http://powerful-ridge-02526.herokuapp.com/api/events', {
       
       
     }).subscribe(data => {
@@ -228,7 +228,7 @@ eventsL() {
 
   return new Promise(resolve => {
 
-    this.http.get('http://127.0.0.1:8000/api/eventsList', {
+    this.http.get('http://powerful-ridge-02526.herokuapp.com/api/eventsList', {
       
       
     }).subscribe(data => {
@@ -245,7 +245,7 @@ rate(user_id:any, event_id:any,rate:any,commentary:any) {// hacer opcionalmente 
 
   return new Promise(resolve => {
 
-    this.http.post('http://127.0.0.1:8000/api/rate', {
+    this.http.post('http://powerful-ridge-02526.herokuapp.com/api/rate', {
       
       user_id: user_id,
       event_id: event_id,
@@ -266,7 +266,7 @@ inscribe(user_id:any, event_id:any) {// hacer opcionalmente para email: string y
 
   return new Promise(resolve => {
 
-    this.http.post('http://127.0.0.1:8000/api/inscribe', {
+    this.http.post('http://powerful-ridge-02526.herokuapp.com/api/inscribe', {
       
       user_id: user_id,
       event_id: event_id,
