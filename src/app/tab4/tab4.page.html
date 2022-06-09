@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Events</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-sliding #slidingItem *ngFor="let eventsF of events">
+    <ion-item>
+      <ion-label>
+        <ion-card class="ion-text-center">
+          <ion-card-header>
+            <ion-card-title><strong>{{ eventsF.name }}</strong></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+          <h3>Event Start Date: <i>{{ eventsF.date_start }}</i></h3>
+            
+          <h1><ion-icon name="arrow-down-sharp"></ion-icon></h1>
+
+          <h3>Event Ending Date: <i>{{ eventsF.date_end }}</i></h3>
+          
+          </ion-card-content>
+          <ion-footer collapse="fade">
+            <ion-toolbar>
+              <ion-button (click)="checkinscripted(eventsF.id)" color="dark" *ngIf=" eventsF.date_end >= today" >
+                <ion-icon name="person-add-outline"></ion-icon>
+                Inscribe!
+              </ion-button>
+              <ion-button (click)="createrateModal(eventsF.id)" color="tertiary" *ngIf=" eventsF.date_start <= today">
+                <ion-icon name="ribbon-outline"></ion-icon> Rate the event!
+              </ion-button>
+            </ion-toolbar>
+          </ion-footer>
+
+        </ion-card>
+      </ion-label>
+    </ion-item>
+  </ion-item-sliding>
+</ion-content>

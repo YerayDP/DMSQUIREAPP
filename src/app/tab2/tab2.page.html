@@ -12,7 +12,7 @@
     <ion-searchbar #search (ionChange)="getItems($event)"></ion-searchbar>
   </ion-toolbar>
 
-    <ion-item-sliding *ngFor="let spell of spellsF">
+    <ion-item-sliding #slidingItem *ngFor="let spell of spellsF">
       <ion-item>
         <ion-label>
           <h2>{{ spell.name }}</h2>
@@ -20,7 +20,7 @@
       </ion-item>
       <ion-item-options color="primary" side="end">
         <ion-item-option>
-          <ion-button (click)="spellsModal(spell)">Show info:</ion-button>
+          <ion-button (click)="spellsModal(spell); closeSliding(slidingItem)">Show info:</ion-button>
         </ion-item-option>
         </ion-item-options>
     </ion-item-sliding>

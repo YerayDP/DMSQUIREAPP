@@ -18,6 +18,9 @@ export class Tab2Page implements OnInit{
   ngOnInit() {
     this.getSpells();
   }
+  closeSliding(slidingItem) {
+    slidingItem.close();
+}
   getSpells(){
    this.RestService.spells().then(data => {
     this.spells = data['success'];

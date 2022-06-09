@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-icon size="large" name="close-outline"icon-only (click)="closeModal()"></ion-icon>
+      </ion-buttons>
+      <ion-title>Create PJ Panel</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="createRate()">
+    <ion-item>
+      <ion-label>Commentary:</ion-label>
+      <ion-input type="text" [(ngModel)]="commentary" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+    
+    
+    
+     <ion-item>
+      <ion-label>Rate:</ion-label>
+      <ion-input type="number" min="1" max="10" [(ngModel)]="rate" [ngModelOptions]="{standalone: true}" placeholder="Between 1-10 values"></ion-input>
+    </ion-item>
+    
+    <p class="ion-text-center">
+      <ion-button type="submit" >Guardar</ion-button>
+    </p>  
+  </form>
+</ion-content>

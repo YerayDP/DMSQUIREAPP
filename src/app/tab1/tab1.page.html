@@ -6,12 +6,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-button (click)="createpjModal()">Create PJ!</ion-button>
+
+<ion-list>
+    <ion-item *ngFor="let pj of pjs">
+     
+        <ion-label>
+          <h2><strong>Name: </strong>{{ pj.name }}<strong>  Level: </strong> {{ pj.level }}</h2>
+          
+        </ion-label>
+      
+      
+      
+        <ion-button color="danger" size="solid" (click)="showConfirm(pj.id)"><ion-icon name="trash-bin-outline"></ion-icon></ion-button>
+       
+      </ion-item>
+    
+  </ion-list>
 </ion-content>

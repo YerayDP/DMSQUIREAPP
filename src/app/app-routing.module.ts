@@ -19,7 +19,19 @@ const routes: Routes = [
   {
     path: 'modal-weapons',
     loadChildren: () => import('./modal-weapons/modal-weapons.module').then( m => m.ModalWeaponsPageModule)
+  },  {
+    path: 'modal-create-pj',
+    loadChildren: () => import('./modal-create-pj/modal-create-pj.module').then( m => m.ModalCreatePJPageModule)
   },
+  {
+    path: 'tab4',
+    loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
+  },
+  {
+    path: 'modal-rate',
+    loadChildren: () => import('./modal-rate/modal-rate.module').then( m => m.ModalRatePageModule)
+  },
+
 ];
 @NgModule({
   imports: [

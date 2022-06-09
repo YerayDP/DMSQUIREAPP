@@ -18,6 +18,9 @@ export class Tab3Page implements OnInit{
   ngOnInit() {
     this.getWeapons();
   }
+  closeSliding(slidingItem) {
+    slidingItem.close();
+}
   getWeapons(){
    this.RestService.weapons().then(data => {
     this.weapons = data['success'];
